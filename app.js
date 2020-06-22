@@ -10,14 +10,15 @@ dotenv.config();
 
 
 
-//Middlewares
-app.use(cors);
-app.use(express.json());
 
-mongoose.connect('process.env.DATABASE_URL', 
-    { useUnifiedTopology: true,
-    useNewUrlParser: true,
-    useCreateIndex: true});
+
+mongoose.connect('process.env.DATABASE_URL', { useUnifiedTopology: true, useNewUrlParser: true}, ()=>{
+    console.log('CONNECTED TO DATABASE');
+});
+
+    //Middlewares
+    app.use(cors);
+    app.use(express.json());
 
 
 
