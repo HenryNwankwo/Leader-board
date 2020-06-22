@@ -1,9 +1,10 @@
 //for the route logics
 const User = require('../models/user');
 const router = require('express').Router();
+const validator = require('express-validator');
 
 
-exports.getLeaderBoard = async(req,res)=>{
+exports.register = async(req,res)=>{
 
     const user = new User({
 
